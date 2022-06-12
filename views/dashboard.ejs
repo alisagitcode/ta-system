@@ -1,0 +1,108 @@
+<%- include('partials/header_dashboard') %>
+
+<%- include('partials/dashboard_navigation') %>
+
+
+<div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  <div class="row mb-4">
+    <% if (myProfiles) { %>
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom no-print">
+      <div class="btn-toolbar mb-2 mb-md-0 no-print">
+        <div class="btn-group me-2">
+          <a href="/details/profile/create" class="btn btn-sm btn-outline-secondary"><span data-feather="users" class="align-text-bottom"></span> Create Profile</a>
+          <button type="button" onclick="window.print();return false;" class="btn btn-sm btn-outline-secondary"><span data-feather="file" class="align-text-bottom"></span> Print</button>
+        </div>
+        <a href="/reports" class="btn btn-sm btn-outline-secondary"><span data-feather="calendar" class="align-text-bottom"></span> Reports</a>
+      </div>
+    </div>
+
+    <% if (!searchInterface) { %>
+    <div class="container border-bottom">
+      <h1 class="h2">My Weekly Performance</h1>
+      <div class="row">
+        <div class="col-sm">
+          <canvas class="my-4 w-100" id="myChartTasks" width="900" height="380"></canvas>
+          <p>*Tasks Chart</p>
+        </div>
+        <div class="col-sm">
+          <canvas class="my-4 w-100" id="myChartActions" width="900" height="380"></canvas>
+          <p>*Actions Chart</p>
+        </div>
+
+      </div>
+
+
+      <h2 class="pb-3">My Active Tasks Today</h2>
+      <div id="tasks">
+        <% myProfiles.forEach(function(profile) { %>
+
+        <% if(profile.tasks) { profile.tasks.forEach(function(task) { %>
+        <% if(task.status === "new" || task.status === "processing") {  %>
+        <% if(task.taskStartDate.getFullYear() === todayYear
+                && task.taskStartDate.getMonth() === todayMonth
+                && task.taskStartDate.getDate() === todayDay) {  %>
+        <%- include ('partials/task', {task: task, profileId: profile._id, pageName: "hr_interview", dashboardLink: true}) %>
+        <%  } } } ) } }) %>
+      </div>
+    </div>
+
+    <div class="container border-top">
+      <p>* That's all active tasks scheduled for today!</p>
+      <h2>My Active Talents List</h2>
+      <%  } else { %>
+      <div class="container">
+        <h2>Found Talents List</h2>
+        <%  } %>
+        <div class="table-responsive">
+          <table class="table table-striped table-sm">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Position</th>
+                <th scope="col">Department</th>
+                <th scope="col">Status</th>
+                <th class="no-print" scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% myProfiles.forEach(function(profile) { %>
+              <tr>
+                <td><%= profile.firstName %>, <%= profile.lastName %></td>
+                <td><%= profile.position %></td>
+                <td><%= profile.department %></td>
+                <% if(profile.currentStepStatus != "reject" && profile.currentStepActive != "finishedAllSteps") {%>
+                <td><i class="fa-solid fa-user-tie"></i> Processing</td>
+                <% } else if(profile.currentStepActive === "finishedAllSteps") { %>
+                <td><i class="fa-solid fa-check"></i> Accepted</td>
+                <% } else { %>
+                <td><i class="fa-solid fa-ban"></i> Rejected</td>
+                <% } %>
+                <td class="no-print" style="white-space: nowrap;">
+                  <% if(profile.currentStepActive != "finishedAllSteps" && profile.currentStepStatus != "reject") {%>
+                  <a href="/details/<%= profile.currentStepActive %>/<%= profile._id %>" class="btn btn-success btn-floating" style="display: inline-block;">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </a>
+
+                  <a href="/deleteProfile/<%= profile._id %>" class="btn btn-danger btn-floating" style="display: inline-block;">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                  </a>
+                  <% } %>
+                  <a href="/details/overview/<%= profile._id %>" class="btn btn-info btn-floating" style="display: inline-block;">
+                    <i class="fa-solid fa-info"></i>
+                  </a>
+                </td>
+              </tr>
+              <%  }) %>
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+      <% } else { %>
+      <h1 class="h2">Nothing found there yet... Please add a new talent!</h1>
+      <%- include('profile_new.ejs') %>
+      <% }  %>
+      </main>
+
+
+      <%- include('partials/footer_dashboard') %>

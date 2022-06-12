@@ -1,0 +1,100 @@
+<%- include('partials/header_dashboard') %>
+
+<%- include('partials/dashboard_navigation') %>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">API Integrations</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+      <div class="btn-group me-2">
+        <a href="/dashboard" class="btn btn-sm btn-outline-secondary"><span data-feather="home" class="align-text-bottom"></span>
+          Dashboard</a>
+      </div>
+    </div>
+  </div>
+  <p>Representational state transfer (REST) is a software architectural style that was created to guide the design and development of the architecture for the World Wide Web. REST defines a set of constraints for how the architecture of an
+    Internet-scale distributed hypermedia system, such as the Web, should behave. The REST architectural style emphasises the scalability of interactions between components, uniform interfaces, independent deployment of components, and the creation
+    of a layered architecture to facilitate caching components to reduce user-perceived latency, enforce security, and encapsulate legacy systems.</p>
+
+  <p>REST has been employed throughout the software industry and is a widely accepted set of guidelines for creating stateless, reliable web APIs. A web API that obeys the REST constraints is informally described as RESTful. RESTful web APIs are
+    typically loosely based on HTTP methods to access resources via URL-encoded parameters and the use of JSON or XML to transmit data.</p>
+
+  <p>"Web resources" were first defined on the World Wide Web as documents or files identified by their URLs. Today, the definition is much more generic and abstract and includes every thing, entity, or action that can be identified, named,
+    addressed, handled, or performed in any way on the Web. In a RESTful Web service, requests made to a resource's URI elicit a response with a payload formatted in HTML, XML, JSON, or some other format. For example, the response can confirm that
+    the resource state has been changed. The response can also include hypertext links to related resources. The most common protocol for these requests and responses is HTTP. It provides operations (HTTP methods) such as GET, POST, PUT, and
+    DELETE. By using a stateless protocol and standard operations, RESTful systems aim for fast performance, reliability, and the ability to grow by reusing components that can be managed and updated without affecting the system as a whole, even
+    while it is running.</p>
+
+  <p>The goal of REST is to increase performance, scalability, simplicity, modifiability, visibility, portability, and reliability. This is achieved through following REST principles such as a client–server architecture, statelessness,
+    cacheability, use of a layered system, support for code on demand, and using a uniform interface. These principles must be followed for the system to be classified as RESTful.</p>
+
+  <h1>Quick Start</h1>
+  <p>REST API are a service accessed from client devices (Mobile Phones, Laptop, etc.) to a web server using the Hypertext Transfer Protocol (HTTP). Client devices send a request in the form of an HTTP request, and are met with a response message
+    usually in JavaScript Object Notation (JSON). Developers typically use Web APIs to query a server for a specific set of data from that server.</p>
+  <h1>API Access Key</h1>
+  <p>An application programming interface key (API key) is a unique identifier used to authenticate a user, developer, or calling program to an API. However, they are typically used to authenticate a project with the API rather than a human user.</p>
+  <div class="row mb-4">
+    <div class="col">
+      <div class="form-outline">
+        <input name="firstName" type="text" id="firstNameId" <% if (userData.apiKey) {  %> value="<%= userData.apiKey %>" <% } else { %> value="Generate your KEY first" <% } %> class="form-control" required />
+        <label class="form-label" for="firstNameId">{apiKey}</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-outline">
+        <a href="/getApiKey" type="button" class="btn btn-primary btn-block mb-4">Generate Key</a>
+      </div>
+    </div>
+  </div>
+  <h1>Endpoint</h1>
+  <p>API documentation describes the services an API offers and how to use those services, aiming to cover everything a client would need to know for practical purposes.</p>
+  <div class="form-outline mb-4">
+    <input name="" type="example" id="exampleId" value="https://ta-guide.herokuapp.com/API" class="form-control" required />
+    <label class="form-label" for="exampleId">Endpoint URL</label>
+  </div>
+
+  <table class="table table-bordered border-primary">
+    <thead>
+      <tr>
+        <th scope="col">Protocol</th>
+        <th scope="col">ALL route</th>
+        <th scope="col">Specific route</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>GET</td>
+        <td>/talents/{apiKey}</td>
+        <td>/talents/{apiKey}/{taskId}</td>
+      </tr>
+      <tr>
+        <td>POST</td>
+        <td>/talents/{apiKey}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>PUT</td>
+        <td></td>
+        <td>/talents/{apiKey}/{taskId}</td>
+      </tr>
+      <tr>
+        <td>DELETE</td>
+        <td>/talents/{apiKey}</td>
+        <td>/talents/{apiKey}/{taskId}</td>
+      </tr>
+    </tbody>
+
+  </table>
+
+  <div class="form-outline mb-4">
+    <input name="" type="example" id="exampleId" <% if (userData.apiKey) {  %> value="https://ta-guide.herokuapp.com/API/talents/<%= userData.apiKey %>" <% } else { %> value="Generate your KEY first" <% } %> class="form-control" required />
+    <label class="form-label" for="exampleId">Example. Get all talents</label>
+  </div>
+
+  <p>* Text description source - https://en.wikipedia.org/</p>
+
+
+</main>
+
+<!-- Footer -->
+
+<%- include('partials/footer_dashboard') %>

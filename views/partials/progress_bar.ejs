@@ -1,0 +1,38 @@
+<div class="container container-bottom">
+  <div class="row">
+    <div class="col">
+      <ul id="progress-bar" class="progressbar">
+        <% if(taskBoard === 4) {%>
+        <li class="active"><a href="/details/profile/<%= profileData._id %>" class="btn btn-sm">Profile</a></li>
+        <li>HR Interview</li>
+        <li>Technical Interview</li>
+        <li>Paperwork</li>
+        <% }%>
+
+        <% if(taskBoard === "hr_interview") {%>
+        <li class="active"><a href="/details/profile/<%= profileData._id %>" class="btn btn-sm">Profile</a></li>
+        <li class="active"><a href="/details/hr_interview/<%= profileData._id %>" class="btn btn-sm">HR Interview</a></li>
+        <li>Technical Interview</li>
+        <li>Paperwork</li>
+        <% }%>
+
+        <% if(taskBoard === "technical_interview") {%>
+        <li class="active"><a href="/details/profile/<%= profileData._id %>" class="btn btn-sm">Profile</a></li>
+        <li class="active"><a href="/details/hr_interview/<%= profileData._id %>" class="btn btn-sm">HR Interview</a></li>
+        <li class="active"><a href="/details/technical_interview/<%= profileData._id %>" class="btn btn-sm">Technical Interview</a></li>
+        <li>Paperwork</li>
+        <% }%>
+
+        <% if(taskBoard === "paperwork") {%>
+        <li class="active"><a href="/details/profile/<%= profileData._id %>" class="btn btn-sm">Profile</a></li>
+        <li class="active"><a href="/details/hr_interview/<%= profileData._id %>" class="btn btn-sm">HR Interview</a></li>
+        <li class="active"><a href="/details/technical_interview/<%= profileData._id %>" class="btn btn-sm">Technical Interview</a></li>
+        <li class="active"><a href="/details/paperwork/<%= profileData._id %>" class="btn btn-sm">Paperwork</a></li>
+        <% }%>
+
+
+
+      </ul>
+    </div>
+  </div>
+</div>

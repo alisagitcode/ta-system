@@ -1,0 +1,196 @@
+<%- include('partials/header_main') %>
+
+
+<section id="title">
+
+  <div class="container-fluid">
+
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <a class="navbar-brand" href="#"><i class="fa-solid fa-chart-line"></i> TA Guide</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#features">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#testimonials">Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#pricing">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#cta">Login</a>
+          </li>
+        </ul>
+      </div>
+
+    </nav>
+
+
+
+    <div class="row d-flex h-100" style="padding-top: 3%;">
+      <div class="col-md-12 col-lg-6 col-xl-5">
+        <h3><strong>Easy and powerful tool for talent acquisition management process</strong></h3>
+        <img src="images/draw2.webp" class="img-fluid" alt="TA Guide">
+      </div>
+      <div class="col-md-12 col-lg-6 col-xl-4 offset-xl-1" style="margin-left:auto;">
+
+        <%- include('partials/login_form') %>
+        <h5><%= authErrorText %></h5>
+
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Features -->
+
+<section id="features">
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-lg-4 features-block">
+        <i class="fas fa-list-check features-icon"></i>
+        <h3>Easy to use.</h3>
+        <p>So simple and easy to use, literally everyone can do it.</p>
+      </div>
+
+      <div class="col-lg-4 features-block">
+        <i class="fas fa-address-card features-icon"></i>
+        <h3>Track each step.</h3>
+        <p>For transparency of your recrutment process.</p>
+      </div>
+
+      <div class="col-lg-4 features-block">
+        <i class="fas fa-chart-pie features-icon"></i>
+        <h3>All reports.</h3>
+        <p>All reports you need in one place.</p>
+      </div>
+
+    </div>
+
+
+  </div>
+</section>
+
+<!-- Testimonials -->
+
+<section id="testimonials">
+
+  <div id="carouselTestimonialControls" class="carousel slide" data-ride="false" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <h2>I no longer have to write down any paper notes. I've found the best app for my work. Thanks.</h2>
+        <img src="images/user1.png" class="testimonial-image" alt="dog-profile">
+        <em>Katty, New York</em>
+      </div>
+      <div class="carousel-item">
+        <h2 class="testimonial-text">My work was so boring, but with TAMS's help, I've found the best solution. Everything I need is here.</h2>
+        <img class="testimonial-image" src="images/user2.png" alt="lady-profile">
+        <em>Lana, London</em>
+      </div>
+      <div class="carousel-item">
+        <h2 class="testimonial-text">This is a great tool for organizing things in one place.</h2>
+        <img class="testimonial-image" src="images/user3.jpg" alt="lady-profile">
+        <em>Mark, Paris</em>
+      </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonialControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonialControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+</section>
+
+<!-- Pricing -->
+
+<section id="pricing">
+
+  <h2 class="price_plans_header">A Plan for Every Company's Needs</h2>
+  <p class="price_plans_header">Simple and affordable price plans for your company size.</p>
+
+  <div class="row">
+    <div class="pricing-column col-lg-4 col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h3>Community</h3>
+        </div>
+
+        <div class="card-body">
+          <h2>Free</h2>
+          <p>15 Profiles Per Day</p>
+          <p>100 Tasks Per Day</p>
+          <a href="#cta" class="btn btn-lg btn-block btn-outline-dark btn-mobile">Sign Up</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-column col-lg-4 col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h3>Startup</h3>
+        </div>
+
+        <div class="card-body">
+          <h2>$29 / mo</h2>
+          <p>150 Profiles Per Day</p>
+          <p>1000 Tasks Per Day</p>
+          <a href="#cta" class="btn btn-lg btn-block btn-dark btn-mobile">Sign Up</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-column col-lg-4 col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h3>Corporation</h3>
+        </div>
+        <div class="card-body">
+          <h2>$99 / mo</h2>
+          <p>Pirority Support</p>
+          <p>Unlimited Profiles</p>
+          <p>Unlimited Tasks</p>
+          <a href="#cta" class="btn btn-lg btn-block btn-dark btn-mobile">Sign Up</a>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- Call to Action -->
+
+<section id="cta">
+
+  <div class="row d-flex h-100" style="padding-top: 3%;">
+    <div class="col-md-12 col-lg-6 col-xl-5">
+      <h3>Find the best solution for talent acquisition today. Try it for FREE</h3>
+      <img src="images/draw2.webp" class="img-fluid" alt="Sample image">
+    </div>
+    <div class="col-md-12 col-lg-6 col-xl-4 offset-xl-1" style="margin-right:auto;">
+
+      <%- include('partials/login_form') %>
+      <h5><%= authErrorText %></h5>
+
+    </div>
+  </div>
+</section>
+
+<%- include('partials/footer_main') %>

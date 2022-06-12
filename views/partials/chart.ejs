@@ -1,0 +1,45 @@
+(() => {
+  'use strict'
+
+  feather.replace({
+    'aria-hidden': 'true'
+  })
+
+  // Graphs
+  function isInPage(node) {
+    return (node === document.body) ? false : document.body.contains(node);
+  }
+
+  const ctx = document.getElementById('<%- [chartName] %>')
+
+  const graphIsAvailable = isInPage(ctx)
+  // eslint-disable-next-line no-unused-vars
+  if (graphIsAvailable === true) {
+    const myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: [<%- [reportDate] %>],
+        datasets: [{
+          data:   [<%= values %>],
+          lineTension: 0,
+          backgroundColor: 'transparent',
+          borderColor: '#007bff',
+          borderWidth: 4,
+          pointBackgroundColor: '#007bff'
+        }]
+      },
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: false
+            }
+          }]
+        },
+        legend: {
+          display: false
+        }
+      }
+    })
+  }
+})()

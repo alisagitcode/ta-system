@@ -1,0 +1,44 @@
+<%- include('partials/header_dashboard') %>
+
+<%- include('partials/dashboard_navigation') %>
+
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">My Actions Log</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+      <div class="btn-group me-2">
+        <a href="/dashboard" class="btn btn-sm btn-outline-secondary"><span data-feather="home" class="align-text-bottom"></span>
+          Dashboard</a>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-striped table-sm">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Action</th>
+          <th scope="col">Type</th>
+          <th scope="col">Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if(logsData) { for (var i = 0; i < logsData.length; i++) { %>
+        <tr>
+          <td><%= (i + 1) %></td>
+          <td><%= logsData[i].object %></td>
+          <td><%= logsData[i].action %></td>
+          <td><%= logsData[i].logTimeDate.toLocaleString() %></td>
+        </tr>
+        <%  } } %>
+
+      </tbody>
+    </table>
+  </div>
+
+  </div>
+</main>
+
+<!-- Footer -->
+
+<%- include('partials/footer_dashboard') %>

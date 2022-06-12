@@ -1,0 +1,63 @@
+<div class="container border-bottom">
+  <div class="row mb-4">
+    <div class="col">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="firstNameId">First Name</span>
+        <input type="text" class="form-control" placeholder="<%= profileData.firstName %>" aria-label="First Name" aria-describedby="firstNameId" readonly>
+      </div>
+    </div>
+    <div class="col">
+      <div class="input-group mb-3">
+        <span class="input-group-text" id="lastNameId">Last Name</span>
+        <input type="text" class="form-control" placeholder="<%= profileData.lastName %>" aria-label="Last Name" aria-describedby="lastNameId" readonly>
+      </div>
+    </div>
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="positionId">Position</span>
+    <input type="text" class="form-control" placeholder="<%= profileData.position %>" aria-label="Position" aria-describedby="positionId" readonly>
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="departmentId">Department</span>
+    <input type="text" class="form-control" placeholder="<%= profileData.department %>" aria-label="Department" aria-describedby="departmentId" readonly>
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="addressId">Address</span>
+    <input type="text" class="form-control" placeholder="<%= profileData.address %>" aria-label="Address" aria-describedby="addressId" readonly>
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="emailId">Email</span>
+    <input type="text" class="form-control" placeholder="<%= profileData.email %>" aria-label="Email" aria-describedby="emailId" readonly>
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="phoneId">Phone</span>
+    <input type="text" class="form-control" placeholder="<%= profileData.phone %>" aria-label="Phone" aria-describedby="phoneId" readonly>
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="notesId">Additional Notes</span>
+    <input type="text" class="form-control" placeholder="<%= profileData.additionalNotes %>" aria-label="Additional Notes" aria-describedby="notesId" readonly>
+  </div>
+
+  <!-- Checkbox -->
+  <div class="form-check d-flex justify-content-left mb-4">
+    <input name="hasExperience" class="form-check-input me-2" type="checkbox" id="hasExperience" <%= (profileData.hasExperience === true) ? "checked" : "" %> disabled />
+    <label class="form-check-label" for="hasExperience"> Has relevant work experience? </label>
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="stepId">Current Step</span>
+    <input type="text" class="form-control" placeholder="<%= profileData.currentStepActive %>" aria-label="Current Step" aria-describedby="stepId" readonly>
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="statusId">Status</span>
+    <input type="text" class="form-control" placeholder="<%= profileData.currentStepStatus %>" aria-label="Status" aria-describedby="statusId" readonly>
+  </div>
+
+</div>

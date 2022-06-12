@@ -1,0 +1,23 @@
+  <div class="task">
+    <h1><%= task.name %> </h1>
+    <p>Status: <%= task.status %></p>
+    <p>Start: <%= task.taskStartDate.toLocaleString() %></p>
+    <p>End: <%= task.taskEndDate.toLocaleString() %></p>
+    <% if(task.status != "cancelled" && task.status != "done") { %>
+    <form>
+      <button type="submit" formaction="/taskAction/<%= dashboardLink %>/<%= task._id %>/cancel/<%= profileId %>/<%= pageName %>#tasks" name="button"><i class="fa-solid fa-ban"></i></button>
+    </form>
+    <%  } if(task.status != "cancelled" && task.status === "processing") { %>
+    <form>
+      <button type="submit" formaction="/taskAction/<%= dashboardLink %>/<%= task._id %>/finish/<%= profileId %>/<%= pageName %>#tasks" name="button"><i class="fa-solid fa-check"></i></button>
+    </form>
+    <%  } if(task.status === "new") { %>
+    <form>
+      <button type="submit" formaction="/taskAction/<%= dashboardLink %>/<%= task._id %>/processing/<%= profileId %>/<%= pageName %>#tasks" name="button"><i class="fa-solid fa-play"></i></button>
+    </form>
+    <%  } if(dashboardLink === true) { %>
+    <form>
+      <button type="submit" formaction="/taskAction/<%= dashboardLink %>/<%= task._id %>/redirect/<%= profileId %>/<%= pageName %>#tasks" name="button"><i class="fa-solid fa-info"></i></button>
+    </form>
+    <%  } %>
+  </div>

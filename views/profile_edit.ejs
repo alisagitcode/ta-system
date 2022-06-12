@@ -1,0 +1,66 @@
+<div class="container border-bottom">
+  <form action="/updateProfile" method="post">
+    <!-- 2 column grid layout with text inputs for the first and last names -->
+    <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+          <input name="firstName" type="text" id="firstNameId" class="form-control" value="<%= profileData.firstName %>" required />
+          <label class="form-label" for="firstNameId">First name</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <input name="lastName" type="text" id="lastNameId" class="form-control" value="<%= profileData.lastName %>" required />
+          <label class="form-label" for="lastNameId">Last name</label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Text input -->
+    <div class="form-outline mb-4">
+      <input name="position" type="text" id="positionId" class="form-control" value="<%= profileData.position %>" required />
+      <label class="form-label" for="positionId">Position</label>
+    </div>
+
+    <!-- Text input -->
+    <div class="form-outline mb-4">
+      <input name="department" type="text" id="departmentId" class="form-control" value="<%= profileData.department %>" required />
+      <label class="form-label" for="departmentId">Department</label>
+    </div>
+
+    <!-- Text input -->
+    <div class="form-outline mb-4">
+      <input name="address" type="text" id="addressId" class="form-control" value="<%= profileData.address %>" required />
+      <label class="form-label" for="addressId">Address</label>
+    </div>
+
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <input name="email" type="email" id="emailId" class="form-control" value="<%= profileData.email %>" required />
+      <label class="form-label" for="emailId">Email</label>
+    </div>
+
+    <!-- Number input -->
+    <div class="form-outline mb-4">
+      <input name="phone" type="number" id="phoneId" class="form-control" value="<%= profileData.phone %>" required />
+      <label class="form-label" for="phoneId">Phone</label>
+    </div>
+
+    <!-- Additional information input -->
+    <div class="form-outline mb-4">
+      <textarea name="additionalNotes" class="form-control" id="additionalNotesId" rows="4" required><%= profileData.additionalNotes %></textarea>
+      <label class="form-label" for="additionalNotesId">Additional information</label>
+    </div>
+
+    <!-- Checkbox -->
+    <div class="form-check d-flex justify-content-left mb-4">
+      <input name="hasExperience" class="form-check-input me-2" type="checkbox" id="hasExperienceId" <%= (profileData.hasExperience === true) ? "checked" : "" %> />
+      <label class="form-check-label" for="hasExperienceId"> Has relevant work experience? </label>
+    </div>
+
+    <!-- Submit button -->
+    <input name="linkBack" type="hidden" value="/details/hr_interview/<%= profileData._id %>" />
+    <input name="id" type="hidden" id="form6Example1" class="form-control" value="<%= profileData._id %>" />
+    <button type="submit" class="btn btn-primary btn-block mb-4">Update & Continue</button>
+  </form>
+</div>

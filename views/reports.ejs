@@ -1,0 +1,51 @@
+<%- include('partials/header_dashboard') %>
+
+<%- include('partials/dashboard_navigation') %>
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Reports</h1>
+    <div class="btn-toolbar mb-2 mb-md-0">
+      <div class="btn-group me-2">
+        <a href="/dashboard" class="btn btn-sm btn-outline-secondary"><span data-feather="home" class="align-text-bottom"></span>
+          Dashboard</a>
+      </div>
+    </div>
+  </div>
+  <p>A report is a document that presents information in an organized format for a specific audience and purpose. Although summaries of reports may be delivered orally, complete reports are almost always in the form of written documents.</p>
+  <p>In modern business scenario, reports play a major role in the progress of business. Reports are the backbone to the thinking process of the establishment and they are responsible, to a great extent, in evolving an efficient or inefficient work environment.</p>
+  <p>The significance of the reports includes:</p>
+    <ul class="list-group">
+      <li class="list-group-item">Reports present adequate information on various aspects of the business.</li>
+      <li class="list-group-item">All the skills and the knowledge of the professionals are communicated through reports.</li>
+      <li class="list-group-item">Reports help the top line in decision making.</li>
+      <li class="list-group-item">A rule and balanced report also helps in problem solving.</li>
+      <li class="list-group-item">Reports communicate the planning, policies and other matters regarding an organization to the masses. News reports play the role of ombudsman and levy checks and balances on the establishment.</li>
+    </ul>
+  <h1>Reports Elements</h1>
+  <p>Reports use features such as tables, graphics, pictures, voice, or specialized vocabulary in order to persuade a specific audience to undertake an action or inform the reader of the subject at hand. Some common elements of written reports include headings to indicate topics and help the reader locate relevant information quickly, and visual elements such as charts, tables and figures, which are useful for breaking up large sections of text and making complex issues more accessible. Lengthy written reports will almost always contain a table of contents, appendices, footnotes, and references. A bibliography or list of references will appear at the end of any credible report and citations are often included within the text itself. Complex terms are explained within the body of the report or listed as footnotes in order to make the report easier to follow. A short summary of the report's contents, called an abstract, may appear in the beginning so that the audience knows what the report will cover. Online reports often contain hyperlinks to internal or external sources as well.</p>
+  <p>Verbal reports differ from written reports in the minutiae of their format, but they still educate or advocate for a course of action. Quality reports will be well researched and the speaker will list their sources if at all possible.</p>
+  <h1>TA Guide Performance Reports</h1>
+  <p>Talent Acquisition Management System (TA Guide) includes following performance reports:</p>
+  <ul class="list-group">
+    <li class="list-group-item">Report contains "Tasks Done per Day" Chart.</li>
+    <li class="list-group-item">Report contains "All Actions in System per Day" Chart.</li>
+  </ul>
+  <h1 class="h2">My Performance Reports</h1>
+  <div class="row">
+    <div class="col-sm">
+      <canvas class="my-4 w-100" id="myChartTasks" width="900" height="380"></canvas>
+      <p>*Tasks Chart</p>
+    </div>
+    <div class="col-sm">
+      <canvas class="my-4 w-100" id="myChartActions" width="900" height="380"></canvas>
+      <p>*Actions Chart</p>
+    </div>
+  </div>
+
+  <p>* Text description source - https://en.wikipedia.org/</p>
+
+</main>
+
+<!-- Footer -->
+
+<%- include('partials/footer_dashboard') %>

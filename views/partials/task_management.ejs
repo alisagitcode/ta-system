@@ -1,0 +1,54 @@
+<div class="container border-bottom">
+  <div class="row mb-4">
+    <form action="/saveTask" method="post">
+
+      <!-- Task data input -->
+      <div class="form-outline mb-4">
+        <label for="start">Task Date:</label>
+        <input type="date" id="date" class="form-control" name="taskStartDate" required />
+        <label for="start">Task Start Time:</label>
+        <input type="time" id="time" class="form-control" name="taskStartTime" required />
+        <label for="start">Task End Time:</label>
+        <input type="time" id="time" class="form-control" name="taskEndTime" required />
+        <label class="form-label">Task Details:</label>
+        <textarea name="taskText" class="form-control" rows="4" required></textarea>
+        <input type="hidden" name="taskBoard" value="<%= taskBoard %>">
+        <input name="id" type="hidden" value="<%= talentId %>" />
+        <button type="submit" class="btn btn-outline-primary btn-space">Save Task</button>
+      </div>
+
+    </form>
+
+    <div id="tasks">
+      <% if(profileData.tasks) { profileData.tasks.forEach(function(task) { if(task.taskBoard === taskBoard) {%>
+      <%- include ('task', {task: task, profileId: profileData._id, pageName: taskBoard, dashboardLink: false}) %>
+      <%  } } ) } %>
+    </div>
+
+    <form>
+      <a type="submit" class="btn btn-outline-success btn-space" href="mailto:<%= profileData.email %>?
+        content-type: text/html
+        &subject=Application follow-up
+        &body=Thank you, <%= profileData.firstName %> <%= profileData.lastName %> !<br>
+        Our Human Resources Department received and processed your application.<br>
+        We pleased to annonce that you have been positively assessed!<br><br>
+        Kind regards">Send Positive Feedback Email</a>
+    </form>
+    <form>
+      <a type="submit" class="btn btn-outline-danger btn-space" href="mailto:<%= profileData.email %>?
+        content-type: text/html
+        &subject=Application follow-up
+        &body=Thank you, <%= profileData.firstName %> <%= profileData.lastName %> !<br>
+        Our Human Resources Department received and processed your application.<br>
+        Unfortunately, after due deliberation however, we regret to inform you that we have decided not conside your candidacy for this position.<br><br>
+        Kind regards">Send Negative Feedback Email</a>
+    </form>
+
+    <form>
+      <button type="submit" class="btn btn-outline-success btn-space float-end" formaction="/finishStep/<%= taskBoard %>/success/<%= profileData._id %>" method="get" name="button">Next Step</button>
+    </form>
+    <form>
+      <button type="submit" class="btn btn-outline-danger btn-space float-end" formaction="/finishStep/<%= taskBoard %>/reject/<%= profileData._id %>" method="get" name="button">Reject Candidate</button>
+    </form>
+  </div>
+</div>
