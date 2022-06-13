@@ -1,6 +1,7 @@
 # Talent Acquisition Management System
 TA-Guide is powerful and easy to use tool for talent acquisition management process 
-- https://ta-guide.herokuapp.com/
+- https://ta-guide.herokuapp.com/ - TA-Guide
+- https://github.com/alisagitcode/ta-system/tree/master/help - Comprehensive User's Guide with screenshots
 
 # Why TA-Guide ?
 - Digitalization of the talent acquisition process
