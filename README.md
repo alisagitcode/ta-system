@@ -4,24 +4,28 @@ TA-Guide is powerful and easy to use tool for talent acquisition management proc
 - https://github.com/alisagitcode/ta-system/tree/master/help - Comprehensive User's Guide with screenshots
 
 # Why TA-Guide ?
-- Digitalization of the talent acquisition process
-- Reports present adequate information on various aspects of the talent acquisition process
-- All the tasks related to the talent acquisition process are stored in one place
-- Segmentation of tasks by steps of the talent acquisition process (Human Resources Interview Related Tasks, Technical Interview Related Tasks and Paperwork Related Tasks)
-- Tracking each step of task progress (Status: "new task", "in progress", "done")
-- Information related to each candidate can be accessed and updated in real time
+
+1. Digitalization of the talent acquisition process
+2. Reports present adequate information on various aspects of the talent acquisition process
+3. All the tasks related to the talent acquisition process are stored in one place
+4. Segmentation of tasks by steps of the talent acquisition process (Human Resources Interview Related Tasks, Technical Interview Related Tasks and Paperwork Related Tasks)
+5. Tracking each step of task progress (Status: "new task", "in progress", "done")
+6. Information related to each candidate can be accessed and updated in real time
+7. Integration with third-party systems by REST API
 
 # How to use TA-Guide
-- Create your account
-- Fill in your personal details (My Settings)
-- Create profile for a new candidate (Create Profile)
-- Create list of necessary tasks for Initial Human Resources Department Interview
-- Create list of necessary tasks for Technical Department Interview
-- Create list of necessary tasks for Paperwork Process
-- Track each step of task progress (Mark Task Status as "in progress" or "done")
-- Send candidate feedback related to each step of recrutment process
-- Access list of all scheduled tasks for today on Dashboard page
-- Make a final decision of candidte acceptance and send feedback email
+
+1. Create your account
+2. Fill in your personal details (My Settings)
+3. Create profile for a new candidate (Create Profile)
+4. Create list of necessary tasks for Initial Human Resources Department Interview
+5. Create list of necessary tasks for Technical Department Interview
+6. Create list of necessary tasks for Paperwork Process
+7. Track each step of task progress (Mark Task Status as "in progress" or "done")
+8. Send candidate feedback related to each step of recrutment process
+9. Access list of all scheduled tasks for today on Dashboard page
+10. Make a final decision of candidte acceptance and send feedback email
+11. https://github.com/alisagitcode/ta-system/tree/master/help - Comprehensive User's Guide with screenshots
 
 # REST API
 - TA-Guide has built-in API that conforms to the constraints of REST architectural style and allows for interaction with RESTful web services for existing systems integration and data migration purposes
@@ -39,12 +43,15 @@ TA-Guide is powerful and easy to use tool for talent acquisition management proc
 ## Install
 - ready to deploy on heroku & mongodb atlas
 - create .env file in project root directory
-- SET your PORT
-- PORT=
-- SET your hcaptcha secret key
-- HCAPTCHA_SECRET_KEY=
-- SET your mongoose database connection (server)
-- DB_CONNECT=
+
+```console
+#SET your PORT
+PORT=
+#SET your hcaptcha secret key
+HCAPTCHA_SECRET_KEY=
+#SET your mongoose database connection (server)
+DB_CONNECT=
+```
 
 ## Tech stack
 
